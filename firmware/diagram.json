@@ -1,0 +1,387 @@
+{
+    "version": 1,
+    "author": "Battiston Nicola Raul",
+    "editor": "wokwi",
+    "parts": [
+        {
+            "type": "board-esp32-s2-devkitm-1",
+            "id": "esp",
+            "top": 110.89,
+            "left": 90.97,
+            "attrs": {}
+        },
+        {
+            "type": "wokwi-ds1307",
+            "id": "rtc1",
+            "top": 244.2,
+            "left": 345.7,
+            "attrs": {}
+        },
+        {
+            "type": "wokwi-pushbutton",
+            "id": "btn1",
+            "top": -28.9,
+            "left": 195.5,
+            "rotate": 90,
+            "attrs": {
+                "color": "blue",
+                "xray": ""
+            }
+        },
+        {
+            "type": "wokwi-pushbutton",
+            "id": "btn2",
+            "top": 38.3,
+            "left": 397.1,
+            "rotate": 90,
+            "attrs": {
+                "color": "yellow",
+                "xray": ""
+            }
+        },
+        {
+            "type": "wokwi-pushbutton",
+            "id": "btn3",
+            "top": 44.6,
+            "left": 307.2,
+            "attrs": {
+                "color": "green",
+                "xray": ""
+            }
+        },
+        {
+            "type": "wokwi-pushbutton",
+            "id": "btn4",
+            "top": -22.6,
+            "left": 307.2,
+            "attrs": {
+                "color": "red",
+                "xray": "",
+                "bounce": "1"
+            }
+        },
+        {
+            "type": "wokwi-text",
+            "id": "text1",
+            "top": -48,
+            "left": 201.6,
+            "attrs": {
+                "text": "Snooze"
+            }
+        },
+        {
+            "type": "wokwi-text",
+            "id": "text2",
+            "top": -57.6,
+            "left": 307.2,
+            "attrs": {
+                "text": "Up/Down"
+            }
+        },
+        {
+            "type": "wokwi-text",
+            "id": "text3",
+            "top": -9.6,
+            "left": 422.4,
+            "attrs": {
+                "text": "Set"
+            }
+        },
+        {
+            "type": "wokwi-photoresistor-sensor",
+            "id": "ldr1",
+            "top": 12.8,
+            "left": -172,
+            "attrs": {}
+        },
+        {
+            "type": "wokwi-buzzer",
+            "id": "bz1",
+            "top": -103.2,
+            "left": 107.4,
+            "attrs": {
+                "volume": "0.1"
+            }
+        },
+        {
+            "type": "wokwi-ili9341",
+            "id": "lcd1",
+            "top": 79.1,
+            "left": -225.2,
+            "rotate": 270,
+            "attrs": {}
+        },
+        {
+            "type": "wokwi-dht22",
+            "id": "dht1",
+            "top": -105.3,
+            "left": 23.4,
+            "attrs": {}
+        }
+    ],
+    "connections": [
+        [
+            "esp:TX",
+            "$serialMonitor:RX",
+            "",
+            []
+        ],
+        [
+            "esp:RX",
+            "$serialMonitor:TX",
+            "",
+            []
+        ],
+        [
+            "rtc1:SDA",
+            "esp:21",
+            "violet",
+            [
+                "h-76.8",
+                "v18.9"
+            ]
+        ],
+        [
+            "esp:5V",
+            "rtc1:5V",
+            "red",
+            [
+                "h-9.6",
+                "v38.4",
+                "h249.6",
+                "v-86"
+            ]
+        ],
+        [
+            "rtc1:GND",
+            "esp:GND.2",
+            "black",
+            [
+                "v-124.8",
+                "h-172.8"
+            ]
+        ],
+        [
+            "rtc1:SCL",
+            "esp:20",
+            "#8f4814",
+            [
+                "h-86.4",
+                "v19"
+            ]
+        ],
+        [
+            "btn3:1.l",
+            "esp:GND.2",
+            "black",
+            [
+                "h-28.8",
+                "v28.8",
+                "h-67.2",
+                "v48"
+            ]
+        ],
+        [
+            "btn3:2.r",
+            "esp:26",
+            "green",
+            [
+                "h9.8",
+                "v153.8",
+                "h-153.6",
+                "v57.6"
+            ]
+        ],
+        [
+            "btn4:2.r",
+            "esp:33",
+            "orange",
+            [
+                "h19.4",
+                "v211.4",
+                "h-172.8",
+                "v57.6"
+            ]
+        ],
+        [
+            "ldr1:GND",
+            "esp:GND.2",
+            "black",
+            [
+                "h19.2",
+                "v57.2",
+                "h163.2"
+            ]
+        ],
+        [
+            "bz1:2",
+            "esp:1",
+            "gold",
+            [
+                "v76.8",
+                "h-67.6",
+                "v76.8"
+            ]
+        ],
+        [
+            "lcd1:VCC",
+            "esp:3V3",
+            "red",
+            [
+                "h38.4",
+                "v-134.4"
+            ]
+        ],
+        [
+            "lcd1:GND",
+            "esp:GND.2",
+            "black",
+            [
+                "h9.6",
+                "v86.4",
+                "h201.6",
+                "v-211.2"
+            ]
+        ],
+        [
+            "lcd1:MOSI",
+            "esp:8",
+            "orange",
+            [
+                "h0"
+            ]
+        ],
+        [
+            "lcd1:SCK",
+            "esp:7",
+            "blue",
+            [
+                "h0"
+            ]
+        ],
+        [
+            "esp:18",
+            "btn1:1.r",
+            "blue",
+            [
+                "h19.2",
+                "v-249.6",
+                "h38.4"
+            ]
+        ],
+        [
+            "esp:19",
+            "btn2:1.r",
+            "yellow",
+            [
+                "h57.6",
+                "v-192",
+                "h201.6"
+            ]
+        ],
+        [
+            "ldr1:AO",
+            "esp:6",
+            "green",
+            [
+                "h57.6",
+                "v143.3"
+            ]
+        ],
+        [
+            "esp:3V3",
+            "ldr1:VCC",
+            "red",
+            [
+                "h-28.8",
+                "v-105.6"
+            ]
+        ],
+        [
+            "lcd1:D/C",
+            "esp:9",
+            "green",
+            [
+                "h0"
+            ]
+        ],
+        [
+            "lcd1:CS",
+            "esp:11",
+            "#8f4814",
+            [
+                "h0"
+            ]
+        ],
+        [
+            "btn3:1.r",
+            "btn2:2.r",
+            "black",
+            [
+                "h29",
+                "v48",
+                "h19.4"
+            ]
+        ],
+        [
+            "btn2:2.l",
+            "btn4:1.r",
+            "black",
+            [
+                "v0"
+            ]
+        ],
+        [
+            "btn1:2.r",
+            "bz1:1",
+            "black",
+            [
+                "v9.8",
+                "h-86.6"
+            ]
+        ],
+        [
+            "btn1:2.l",
+            "btn4:1.l",
+            "black",
+            [
+                "v-9.6",
+                "h86.2"
+            ]
+        ],
+        [
+            "dht1:VCC",
+            "esp:3V3",
+            "red",
+            [
+                "v0"
+            ]
+        ],
+        [
+            "esp:GND.2",
+            "dht1:GND",
+            "black",
+            [
+                "v-105.6",
+                "h-115.2"
+            ]
+        ],
+        [
+            "dht1:SDA",
+            "esp:2",
+            "blue",
+            [
+                "v0"
+            ]
+        ],
+        [
+            "lcd1:MISO",
+            "esp:5",
+            "violet",
+            [
+                "h0"
+            ]
+        ]
+    ],
+    "dependencies": {}
+}

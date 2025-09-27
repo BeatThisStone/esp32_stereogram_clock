@@ -1,2 +1,7 @@
+
 # Stereogram Clock
-Battery powered digital clock that runs on an esp32 and has the display rendered as a stereogram.
+
+A battery-powered digital clock using an ESP32 (programmed in Rust).
+It shows the time as a stereogram on a 4” TFT LCD.
+The PCB and case are 3D printed.
+It uses an RTC for timekeeping, buttons for input, a buzzer for alarms, and a light sensor for brightness adjustment.
